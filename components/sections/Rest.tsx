@@ -1,0 +1,39 @@
+import { certs, education, founder, person } from "@/lib/content";
+import { Slot } from "@/components/ui/Slot";
+
+export function Founder() {
+  return (
+    <section id="founder" className="mx-auto grid max-w-6xl gap-10 px-6 py-28 md:grid-cols-12">
+      <div className="md:col-span-7">
+        <h2 className="text-3xl md:text-5xl">{founder.company}</h2>
+        <p className="mono mt-3 text-xs text-cool">{founder.role}, since {founder.since}</p>
+        <p className="measure mt-6">{founder.line}</p>
+      </div>
+      <div className="md:col-span-5"><Slot label="portrait photo" ratio="4 / 5" /></div>
+    </section>
+  );
+}
+
+export function Credentials() {
+  return (
+    <section id="credentials" className="mx-auto max-w-6xl px-6 py-28">
+      <h2 className="text-3xl md:text-5xl">Credentials</h2>
+      <div className="mt-10 grid gap-10 md:grid-cols-2">
+        <ul className="space-y-3">{certs.map((c) => <li key={c} className="border-t border-line pt-3">{c}</li>)}</ul>
+        <ul className="space-y-3">{education.map((e) => <li key={e} className="border-t border-line pt-3">{e}</li>)}</ul>
+      </div>
+    </section>
+  );
+}
+
+export function Contact() {
+  return (
+    <section id="contact" className="mx-auto max-w-6xl px-6 py-28">
+      <h2 className="text-3xl md:text-5xl">Say hello</h2>
+      <p className="mt-6"><a className="mono" href={`mailto:${person.email}`}>{person.email}</a></p>
+      <p className="mono mt-6 text-xs text-cool">
+        <a href={person.links.github}>GitHub</a> / <a href={person.links.gitlab}>GitLab</a> / <a href={person.links.linkedin}>LinkedIn</a>
+      </p>
+    </section>
+  );
+}
