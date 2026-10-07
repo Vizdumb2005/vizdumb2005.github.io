@@ -17,12 +17,12 @@ Spec: https://files.instinct.com/3qc0792o7lb7-portfolio-site-spec-viren-singh (p
 - [x] Layout, nav (one line at 1024px), section shells with labelled placeholders
 - [x] Capability gate: decides live 3D vs fallback
 - [x] Hero belief field (Scene 1), verified at 1280 and 390
-- [ ] Display font: shipping Geist for now. Cabinet Grotesk only after the Fontshare licence is checked.
+- [x] Display font: Instrument Serif (Google Fonts, open licence) for names and section titles; Geist body; Geist Mono labels. Cabinet Grotesk dropped.
 - [x] Hero fallback on mobile, reduced motion and save-data (gradient, no canvas)
 
 ## Phase 2: Stratum scene and case study route
 - [x] Stratum pipeline figure (stepper, SVG, from README). Pinned-scroll version dropped: stepper works on touch and keyboard.
-- [ ] /work/stratum-rag case study page (not started)
+- [x] /work/stratum-rag and /work/kratos-engine case-study pages (README facts only, structure borrowed from reference study)
 
 ## Phase 3: Kratos and FORGE-Data (concept)
 - [x] Kratos loop figure (stepper)
@@ -56,3 +56,4 @@ Spec: https://files.instinct.com/3qc0792o7lb7-portfolio-site-spec-viren-singh (p
 ## Log
 - 2026-10-08: Spec v2 published. Docs created. Scaffold in place, hero in progress.
 - 2026-10-08 00:12: Figures built and checked with Playwright screenshots at 1280 and 390, no console errors, no horizontal overflow. Fixed mobile nav overflow and Kratos label clipping. Not yet done: real-device perf, a11y audit, anti-slop checklist pass, case-study route, Pages deploy workflow.
+- 2026-10-08 01:15: Case-study pages, Email nav button, Instrument Serif added. Checked at 1280 and 390, no errors. CORRECTION: the first deploy served a Jekyll README page, not this site, because Pages was in legacy mode. Next push must set Pages to workflow mode and verify rendered content (canvas, figures, fonts) on the live URL.

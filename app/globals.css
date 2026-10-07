@@ -35,3 +35,5 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--ember); outline
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
+
+.display { font-family: var(--font-serif), Georgia, serif; font-weight: 400; letter-spacing: -0.01em; line-height: 1; }
