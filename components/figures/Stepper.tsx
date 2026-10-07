@@ -11,7 +11,7 @@ export function Stepper({ steps, children, caption }: {
 }) {
   const [i, setI] = useState(0);
   return (
-    <figure className="border border-line p-5 md:p-8">
+    <figure className="min-w-0 border border-line p-5 md:p-8">
       <div aria-hidden="true" className="overflow-x-auto">{children(i)}</div>
       <div role="group" aria-label={caption} className="mt-6 flex flex-wrap gap-2">
         {steps.map((s, k) => (

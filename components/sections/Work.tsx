@@ -18,7 +18,7 @@ export default function Work() {
       <h2 className="display text-5xl md:text-7xl">Work</h2>
       <div className="mt-14 space-y-24">
         {projects.map((p, i) => (
-          <article key={p.slug} className="grid gap-8 md:grid-cols-12">
+          <article key={p.slug} className="grid min-w-0 grid-cols-1 gap-8 md:grid-cols-12">
             <div className={i === 0 ? "md:col-span-5" : "md:col-span-4"}>
               <p className="mono text-xs text-cool">{tag[p.status]}</p>
               <h3 className="display mt-3 text-4xl md:text-5xl">{p.name}</h3>
@@ -26,7 +26,7 @@ export default function Work() {
               <p className="mono mt-4 text-xs text-cool">{p.stack.join(" / ")}</p>
               <p className="mt-4 flex gap-5">{(p.slug === "stratum-rag" || p.slug === "kratos-engine") && <a href={`/work/${p.slug}`}>Case study</a>}{p.href && <a href={p.href}>Repo</a>}</p>
             </div>
-            <div className={i === 0 ? "md:col-span-7" : "md:col-span-8"}>
+            <div className={"min-w-0 " + (i === 0 ? "md:col-span-7" : "md:col-span-8")}>
               {figures[p.slug]}
             </div>
           </article>

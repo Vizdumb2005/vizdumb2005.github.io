@@ -57,3 +57,4 @@ Spec: https://files.instinct.com/3qc0792o7lb7-portfolio-site-spec-viren-singh (p
 - 2026-10-08: Spec v2 published. Docs created. Scaffold in place, hero in progress.
 - 2026-10-08 00:12: Figures built and checked with Playwright screenshots at 1280 and 390, no console errors, no horizontal overflow. Fixed mobile nav overflow and Kratos label clipping. Not yet done: real-device perf, a11y audit, anti-slop checklist pass, case-study route, Pages deploy workflow.
 - 2026-10-08 01:15: Case-study pages, Email nav button, Instrument Serif added. Checked at 1280 and 390, no errors. CORRECTION: the first deploy served a Jekyll README page, not this site, because Pages was in legacy mode. Next push must set Pages to workflow mode and verify rendered content (canvas, figures, fonts) on the live URL.
+- 2026-10-08 01:23: Live deploy verified (canvas, figures, serif, case pages). Fixed mobile horizontal overflow from the Stratum SVG (min-w-0).
