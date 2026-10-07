@@ -1,5 +1,10 @@
 import { projects, fixidesk } from "@/lib/content";
-import { Slot } from "@/components/ui/Slot";
+import Stratum from "@/components/figures/Stratum";
+import Kratos from "@/components/figures/Kratos";
+import Forge from "@/components/figures/Forge";
+import Loki from "@/components/figures/Loki";
+
+const figures: Record<string, React.ReactNode> = { "stratum-rag": <Stratum />, "kratos-engine": <Kratos />, "forge-data": <Forge />, loki: <Loki /> };
 
 const tag: Record<string, string> = {
   "shipped-open-source": "Open source",
@@ -22,7 +27,7 @@ export default function Work() {
               {p.href && <p className="mt-4"><a href={p.href}>View the repo</a></p>}
             </div>
             <div className={i === 0 ? "md:col-span-7" : "md:col-span-8"}>
-              <Slot label={`${p.name}: scene or recording`} />
+              {figures[p.slug]}
             </div>
           </article>
         ))}
