@@ -81,6 +81,7 @@ export const certs = [
   "CS50's Introduction to AI with Python, Harvard",
   "DataCamp Data Scientist",
   "DataCamp AI Engineer for Data Scientists Associate",
+  "Google Business Intelligence Professional Certificate, Coursera, Sep 2026",
   "IBM SkillsBuild Data Analytics",
   "NASSCOM AI & ML, IT-ITeS Sector Skills Council",
   "Deloitte Australia Data Analytics job simulation, Forage",
