@@ -65,10 +65,8 @@ export default function NameMark({ href }: { href: string }) {
         ))}
       </span>
       <span className="namemark-hi" aria-hidden>
-        <span className="namemark-avatar" />
-        <svg className="namemark-wave" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff5a1f" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2" /><path d="M14 10V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v2" /><path d="M10 10.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8" /><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15" />
-        </svg>
+        <img className="namemark-avatar" src="/avatar-3d-160.webp" srcSet="/avatar-3d-160.webp 1x, /avatar-3d-320.webp 2x" width={48} height={48} alt="" decoding="async" />
+        
         <span className="mono text-xs text-ink">Hi, I&apos;m Viren</span>
       </span>
     </a>
