@@ -90,3 +90,17 @@ export const education = [
   "Mangalayatan University, BCA Computer Science, 2026 to 2028 (in progress)",
   "IIT Madras, BS Data Science (coursework), 2024 to 2026",
 ];
+
+export const experiment = {
+  name: "Continual AI 2B",
+  tag: "Experiment, proof of concept",
+  summary:
+    "An open-weights language model I'm building to explore continual learning. Early and unfinished, developed on a laptop with no budget, and published so others can try it or build on it. The final model is targeted for January 2028.",
+  claim:
+    "The model card describes it as 1.83B parameters with dual-key memory and low-rank plasticity adapters, and claims zero catastrophic forgetting. Those are the card's claims, not independently benchmarked.",
+  links: [
+    { label: "Model", href: "https://huggingface.co/Vir007/continual-ai-2b" },
+    { label: "Live Space", href: "https://huggingface.co/spaces/Vir007/continual-ai" },
+  ],
+  source: "HF model card read 2026-10-08; framing from owner (2026-10-08). Separate from LOKI.",
+};

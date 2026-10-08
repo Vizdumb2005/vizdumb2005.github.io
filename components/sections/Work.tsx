@@ -1,4 +1,4 @@
-import { projects, fixidesk } from "@/lib/content";
+import { projects, fixidesk, experiment } from "@/lib/content";
 import Stratum from "@/components/figures/Stratum";
 import Kratos from "@/components/figures/Kratos";
 import Forge from "@/components/figures/Forge";
@@ -32,6 +32,17 @@ export default function Work() {
           </article>
         ))}
       </div>
+      <article className="mt-24 grid grid-cols-1 gap-8 border-t border-white/10 pt-12 md:grid-cols-12">
+        <div className="md:col-span-5">
+          <p className="mono text-xs text-cool">{experiment.tag}</p>
+          <h3 className="display mt-3 text-4xl md:text-5xl">{experiment.name}</h3>
+        </div>
+        <div className="md:col-span-7">
+          <p>{experiment.summary}</p>
+          <p className="mt-4 text-sm opacity-70">{experiment.claim}</p>
+          <p className="mt-4 flex gap-5">{experiment.links.map((l) => <a key={l.href} href={l.href}>{l.label}</a>)}</p>
+        </div>
+      </article>
       <p className="mono mt-20 text-xs text-cool">
         Also on GitLab (FixiDesk group): {fixidesk.map((f, i) => <span key={f.name}>{i > 0 && ", "}<a href={f.href}>{f.name}</a></span>)}
       </p>
