@@ -57,3 +57,9 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--ember); outline
 .skill-nav { width: 44px; height: 44px; border-radius: 999px; border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.05); backdrop-filter: blur(10px); color: var(--ink); cursor: pointer; }
 .skill-nav:hover { border-color: var(--ember); }
 @media (prefers-reduced-motion: reduce) { .skill-card, .skill-step { transition: none; } .skill-track { scroll-behavior: auto; } }
+
+/* Skills ring */
+.skill-stage { --cw: 290px; position: relative; height: 330px; perspective: 1300px; perspective-origin: 50% 40%; touch-action: pan-y; cursor: grab; user-select: none; -webkit-user-select: none; }
+.skill-stage:active { cursor: grabbing; }
+.skill-ring { position: absolute; left: 50%; top: 24px; width: 0; height: 0; transform-style: preserve-3d; }
+.skill-ring-slot { position: absolute; left: calc(var(--cw) / -2); top: 0; width: var(--cw); flex: none; backface-visibility: hidden; transform-style: preserve-3d; }
