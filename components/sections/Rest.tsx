@@ -40,7 +40,7 @@ export function Contact() {
         <div className="relative mx-auto grid max-w-5xl gap-12 md:grid-cols-12">
           <div className="md:col-span-5">
             <h2 className="display text-4xl md:text-5xl">Say hello</h2>
-            <p className="mt-3 max-w-xs text-sm text-cool">Projects, data and AI systems, or just a good question. I read every email.</p>
+            <p className="mt-3 max-w-xs text-sm text-cool">Got a hard data problem or an AI idea worth building? Write to me.</p>
             <a href={`mailto:${person.email}`} className="foot-cta mono mt-6 inline-flex min-h-11 max-w-full items-center rounded-full px-5 text-[13px] no-underline">
               <span className="truncate">{person.email}</span>
             </a>
