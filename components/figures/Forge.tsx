@@ -13,7 +13,7 @@ export default function Forge() {
           </div>
         ))}
       </div>
-      <p className="mono mt-3 border border-line p-3 text-center text-xs text-cool">Self-hosted, one canvas</p>
+      <p className="mono mt-3 border border-line p-3 text-center text-xs text-cool">Postgres for the app, DuckDB inside, one canvas</p>
       <figcaption className="mono mt-4 text-xs text-ember">Concept, in progress. A sketch of the idea, not a working product.</figcaption>
     </figure>
   );

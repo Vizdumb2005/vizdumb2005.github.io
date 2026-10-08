@@ -3,8 +3,9 @@ import Stratum from "@/components/figures/Stratum";
 import Kratos from "@/components/figures/Kratos";
 import Forge from "@/components/figures/Forge";
 import Loki from "@/components/figures/Loki";
+import Vaani from "@/components/figures/Vaani";
 
-const figures: Record<string, React.ReactNode> = { "stratum-rag": <Stratum />, "kratos-engine": <Kratos />, "forge-data": <Forge />, loki: <Loki /> };
+const figures: Record<string, React.ReactNode> = { "stratum-rag": <Stratum />, "kratos-engine": <Kratos />, "forge-data": <Forge />, loki: <Loki />, vaani: <Vaani /> };
 
 const tag: Record<string, string> = {
   "shipped-open-source": "Open source",

@@ -50,12 +50,12 @@ export const cases: Case[] = [
   {
     slug: "forge-data",
     meta: "Data platform / Concept, in progress",
-    headline: "One private workspace for SQL, Python and an AI analyst",
-    tags: ["Self-hosted analytics", "Bring your own key", "Jupyter kernels"],
+    headline: "An AI-first, agentic data science platform you host yourself",
+    tags: ["Agentic data science", "Bring your own key", "Postgres + DuckDB"],
     problem:
-      "Analysts bounce between a BI tool, a notebook and a chat window, and sending company data to a third-party service is often not an option. FORGE Data is my attempt at one self-hosted place for all three.",
+      "Analysts bounce between a BI tool, a notebook and a chat window, and sending company data to a third-party service is often not an option. FORGE Data is my attempt at one self-hosted, AI-first place for all three, an agentic data science platform rather than a notebook with a chatbot bolted on.",
     built:
-      "A spreadsheet-style grid where cells run Python or SQL through Jupyter kernels, with a chat that analyses your data using the LLM provider you choose. The stack in the README is a Next.js web app, a FastAPI backend with REST and WebSockets, Jupyter kernel gateway, PostgreSQL, Redis, MinIO and MLflow, all started with Docker Compose behind Nginx.",
+      "A spreadsheet-style grid where cells run Python or SQL through Jupyter kernels, with a chat that analyses your data using the LLM provider you choose. The stack in the README is a Next.js web app, a FastAPI backend with REST and WebSockets, Jupyter kernel gateway, PostgreSQL, Redis, MinIO and MLflow, all started with Docker Compose behind Nginx. Postgres runs the app itself, and DuckDB is available inside it for analytical queries.",
     decisions: [
       { title: "Your keys, your database", body: "Bring your own key. LLM keys are encrypted at rest in your own database, never on an outside server. OpenAI, Anthropic, Google AI, Azure OpenAI and local Ollama are supported." },
       { title: "Data stays on your infrastructure", body: "Self-hosted by design, with connectors for PostgreSQL, MySQL, BigQuery, Snowflake, CSV, Parquet and REST APIs." },
@@ -82,5 +82,23 @@ export const cases: Case[] = [
     repo: "https://github.com/Vizdumb2005/LOKI",
     source: "README at github.com/Vizdumb2005/LOKI, fetched 2026-10-08",
     note: "Work in progress. The research direction is moving toward gaze detection with a focus on cards.",
+  },
+  {
+    slug: "vaani",
+    meta: "Civic platform / Open source",
+    headline: "A citizen voice-to-policy pipeline, designed around Google Cloud",
+    tags: ["Google Cloud", "Multilingual voice and vision", "Geospatial analytics"],
+    problem:
+      "People report broken roads and water lines in their own language, by message or voice call, and those reports rarely become something a decision-maker can rank. VAANI is a design for turning raw citizen requests into prioritised, explainable public investment.",
+    built:
+      "A stateless FastAPI gateway on Cloud Run takes requests from WhatsApp, SMS through RapidPro, Telegram, phone IVR and the web, and queues the heavy work on Pub/Sub. Vertex AI handles Indian-language speech and Gemini vision on citizen photos. BigQuery GIS places requests on district boundaries and groups them into demand clusters. A Next.js cockpit ranks priorities with an explainable multi-criteria model, and the repo ships Terraform for the whole stack and a GitLab CI pipeline.",
+    decisions: [
+      { title: "Built for Google Cloud from the start", body: "Cloud Run, Pub/Sub, Cloud Tasks, Vertex AI, BigQuery and Secret Manager, defined as Terraform, with deploys through GitLab CI." },
+      { title: "Privacy as a rule, not a setting", body: "The design keeps no audio: buffers are converted in memory and wiped. Small groups of requests are suppressed in the analytics views." },
+      { title: "Explainable prioritisation", body: "A multi-criteria ranking with live sliders, so a planner can see how the order changes when the weights change." },
+    ],
+    repo: "https://gitlab.com/viren.singh.email/vani",
+    source: "README at gitlab.com/viren.singh.email/vani, fetched 2026-10-08",
+    note: "This case study describes the architecture in the README. I have not run it, and it is not a live service.",
   },
 ];

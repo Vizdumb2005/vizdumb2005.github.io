@@ -6,10 +6,11 @@ import { projects } from "@/lib/content";
 import Stratum from "@/components/figures/Stratum";
 import Kratos from "@/components/figures/Kratos";
 import Forge from "@/components/figures/Forge";
+import Vaani from "@/components/figures/Vaani";
 import Loki from "@/components/figures/Loki";
 import Nav from "@/components/ui/Nav";
 
-const figs: Record<string, React.ReactNode> = { "stratum-rag": <Stratum />, "kratos-engine": <Kratos />, "forge-data": <Forge />, loki: <Loki /> };
+const figs: Record<string, React.ReactNode> = { "stratum-rag": <Stratum />, "kratos-engine": <Kratos />, "forge-data": <Forge />, loki: <Loki />, vaani: <Vaani /> };
 
 export function generateStaticParams() { return cases.map((c) => ({ slug: c.slug })); }
 export const dynamicParams = false;
