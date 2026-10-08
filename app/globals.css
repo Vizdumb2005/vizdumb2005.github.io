@@ -37,3 +37,23 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--ember); outline
 }
 
 .display { font-family: var(--font-serif), Georgia, serif; font-weight: 400; letter-spacing: -0.01em; line-height: 1; }
+
+/* Skills carousel: liquid glass cards */
+.skill-track { display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 28px max(24px, calc((100vw - 72rem) / 2 + 24px)) 40px; scroll-padding-inline: max(24px, calc((100vw - 72rem) / 2 + 24px)); scrollbar-width: none; }
+.skill-track::-webkit-scrollbar { display: none; }
+.skill-slot { flex: 0 0 min(80vw, 300px); scroll-snap-align: start; perspective: 900px; list-style: none; }
+.skill-card { --rx: 0deg; --ry: 0deg; --mx: 50%; --my: 0%; position: relative; min-height: 210px; padding: 24px; border-radius: 22px; overflow: hidden;
+  background: linear-gradient(145deg, rgba(255,255,255,.10), rgba(255,255,255,.03) 55%, rgba(255,90,31,.06));
+  border: 1px solid rgba(255,255,255,.12); backdrop-filter: blur(18px) saturate(140%); -webkit-backdrop-filter: blur(18px) saturate(140%);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.25), inset 0 -18px 30px rgba(0,0,0,.25), 0 24px 50px -22px rgba(0,0,0,.8);
+  transform: rotateX(var(--rx)) rotateY(var(--ry)); transform-style: preserve-3d; transition: transform .35s cubic-bezier(.2,.8,.2,1), border-color .3s; will-change: transform; }
+.skill-card:hover { border-color: rgba(255,90,31,.45); }
+.skill-spec { position: absolute; inset: 0; pointer-events: none; opacity: 0; transition: opacity .3s; background: radial-gradient(260px circle at var(--mx) var(--my), rgba(255,255,255,.20), transparent 60%); }
+.skill-card:hover .skill-spec { opacity: 1; }
+.skill-meter { display: flex; align-items: center; justify-content: space-between; margin: 14px 6px 0; }
+.skill-step { width: 26px; height: 6px; border-radius: 3px; background: rgba(255,255,255,.10); transition: background .5s, box-shadow .5s; }
+.skill-meter[data-on="true"] .skill-step[data-filled="true"] { background: linear-gradient(90deg, #ff8a4d, #ff5a1f); box-shadow: 0 0 10px rgba(255,90,31,.55); }
+.skill-slot:hover .skill-step[data-filled="true"] { box-shadow: 0 0 14px rgba(255,90,31,.85); }
+.skill-nav { width: 44px; height: 44px; border-radius: 999px; border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.05); backdrop-filter: blur(10px); color: var(--ink); cursor: pointer; }
+.skill-nav:hover { border-color: var(--ember); }
+@media (prefers-reduced-motion: reduce) { .skill-card, .skill-step { transition: none; } .skill-track { scroll-behavior: auto; } }

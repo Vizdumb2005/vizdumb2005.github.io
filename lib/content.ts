@@ -105,3 +105,15 @@ export const experiment = {
   ],
   source: "HF model card read 2026-10-08; framing from owner (2026-10-08). Separate from LOKI.",
 };
+
+// Levels are 1-5 steps. Proposed by the builder from repo evidence; owner reviews before publishing.
+export const skills = [
+  { name: "Python", note: "Services, data work and ML tooling, daily driver.", group: "Language", level: 5 },
+  { name: "SQL and DuckDB", note: "Analytical queries over files and warehouses.", group: "Data", level: 4 },
+  { name: "Retrieval and RAG", note: "Dense plus BM25, rank fusion, reranking, quality gates.", group: "AI", level: 4 },
+  { name: "Local LLM serving", note: "vLLM and llama.cpp, tool loops, sandboxed execution.", group: "AI", level: 4 },
+  { name: "FastAPI", note: "Typed async APIs with Pydantic and Prometheus metrics.", group: "Backend", level: 4 },
+  { name: "Notebooks and analysis", note: "Jupyter, cleanup, dashboards, reporting.", group: "Data", level: 4 },
+  { name: "Docker and CI", note: "Containers and GitLab pipelines that fail on regressions.", group: "Ops", level: 3 },
+  { name: "React and Next.js", note: "TypeScript front ends, this site included.", group: "Frontend", level: 3 },
+];
