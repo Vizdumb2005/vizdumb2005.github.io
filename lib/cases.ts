@@ -85,7 +85,7 @@ export const cases: Case[] = [
   },
   {
     slug: "vaani",
-    meta: "Civic platform / Open source",
+    meta: "Civic platform / Prototype",
     headline: "A citizen voice-to-policy pipeline, designed around Google Cloud",
     tags: ["Google Cloud", "Multilingual voice and vision", "Geospatial analytics"],
     problem:
@@ -99,6 +99,6 @@ export const cases: Case[] = [
     ],
     repo: "https://gitlab.com/viren.singh.email/vani",
     source: "README at gitlab.com/viren.singh.email/vani, fetched 2026-10-08",
-    note: "This case study describes the architecture in the README. I have not run it, and it is not a live service.",
+    note: "Honest status: a prototype. It has the design, but it has not been deployed or tested.",
   },
 ];

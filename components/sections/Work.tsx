@@ -11,6 +11,7 @@ const tag: Record<string, string> = {
   "shipped-open-source": "Open source",
   concept: "Concept, in progress",
   "work-in-progress": "Work in progress",
+  prototype: "Prototype",
 };
 
 export default function Work() {

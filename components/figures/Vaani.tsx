@@ -11,7 +11,7 @@ const steps: Step[] = [
 ];
 export default function Vaani() {
   return (
-    <Stepper steps={steps} caption="VAANI architecture on Google Cloud, from the README. A design, not a live demo.">
+    <Stepper steps={steps} caption="VAANI architecture on Google Cloud, from the README. A prototype design, not deployed.">
       {(a) => (
         <svg viewBox="0 0 700 110" className="w-full min-w-[620px]">
           <Box x={5} y={40} w={100} on={a === 0} label="Channels" />

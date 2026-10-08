@@ -14,7 +14,7 @@ export const person = {
 export type Project = {
   slug: string;
   name: string;
-  status: "shipped-open-source" | "concept" | "work-in-progress";
+  status: "shipped-open-source" | "concept" | "work-in-progress" | "prototype";
   summary: string;
   stack: string[];
   href?: string;
@@ -55,9 +55,9 @@ export const projects: Project[] = [
   {
     slug: "vaani",
     name: "VAANI",
-    status: "shipped-open-source",
+    status: "prototype",
     summary:
-      "Citizen feedback to policy, designed around Google Cloud. Multilingual requests come in by WhatsApp, SMS, Telegram, IVR or web, Vertex AI reads voice and photos, and BigQuery turns them into ranked demand by district.",
+      "A prototype: citizen feedback to policy, designed around Google Cloud. Not deployed or tested yet. Multilingual requests come in by WhatsApp, SMS, Telegram, IVR or web, Vertex AI reads voice and photos, and BigQuery turns them into ranked demand by district.",
     stack: ["Google Cloud Run", "Vertex AI", "BigQuery", "FastAPI", "Next.js", "Terraform"],
     href: "https://gitlab.com/viren.singh.email/vani",
     source: "README at gitlab.com/viren.singh.email/vani (read, not run); owner: designed around GCP architecture (2026-10-08)",
