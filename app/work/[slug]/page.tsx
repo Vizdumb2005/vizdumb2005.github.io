@@ -5,9 +5,11 @@ import { cases } from "@/lib/cases";
 import { projects } from "@/lib/content";
 import Stratum from "@/components/figures/Stratum";
 import Kratos from "@/components/figures/Kratos";
+import Forge from "@/components/figures/Forge";
+import Loki from "@/components/figures/Loki";
 import Nav from "@/components/ui/Nav";
 
-const figs: Record<string, React.ReactNode> = { "stratum-rag": <Stratum />, "kratos-engine": <Kratos /> };
+const figs: Record<string, React.ReactNode> = { "stratum-rag": <Stratum />, "kratos-engine": <Kratos />, "forge-data": <Forge />, loki: <Loki /> };
 
 export function generateStaticParams() { return cases.map((c) => ({ slug: c.slug })); }
 export const dynamicParams = false;
@@ -48,7 +50,8 @@ export default async function Case({ params }: { params: Promise<{ slug: string 
             </li>
           ))}
         </ol>
-        <p className="mt-10"><a href={c.repo}>Read the source on GitLab</a></p>
+        {c.note && <p className="mono mt-10 border border-dashed border-line p-4 text-xs text-cool">{c.note}</p>}
+        <p className="mt-10"><a href={c.repo}>Read the source on {c.repo.includes("gitlab") ? "GitLab" : "GitHub"}</a></p>
         <Link href={`/work/${next.slug}`} className="mt-16 block border border-line p-6 no-underline hover:border-ember">
           <span className="mono text-xs text-cool">Next project</span>
           <span className="display mt-2 block text-3xl text-ink">{nextP.name}</span>

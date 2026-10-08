@@ -47,8 +47,8 @@ export const projects: Project[] = [
     name: "FORGE-Data",
     status: "concept",
     summary:
-      "An idea in progress: SQL, Python notebooks and an AI copilot on one canvas, with DuckDB underneath. Self-hosted, bring your own key.",
-    stack: ["DuckDB", "Jupyter", "LLMs"],
+      "An idea in progress: SQL, Python notebooks and an AI copilot on one canvas. Self-hosted, bring your own key.",
+    stack: ["Next.js", "FastAPI", "Jupyter", "PostgreSQL"],
     href: "https://github.com/Vizdumb2005/FORGE-Data",
     source: "Owner: incomplete project, include as an idea (2026-10-08)",
   },

@@ -9,6 +9,7 @@ export type Case = {
   decisions: { title: string; body: string }[];
   repo: string;
   source: string;
+  note?: string;
 };
 
 export const cases: Case[] = [
@@ -45,5 +46,41 @@ export const cases: Case[] = [
     ],
     repo: "https://gitlab.com/viren.singh.email/kratos-engine",
     source: "README at gitlab.com/viren.singh.email/kratos-engine, fetched 2026-10-08",
+  },
+  {
+    slug: "forge-data",
+    meta: "Data platform / Concept, in progress",
+    headline: "One private workspace for SQL, Python and an AI analyst",
+    tags: ["Self-hosted analytics", "Bring your own key", "Jupyter kernels"],
+    problem:
+      "Analysts bounce between a BI tool, a notebook and a chat window, and sending company data to a third-party service is often not an option. FORGE Data is my attempt at one self-hosted place for all three.",
+    built:
+      "A spreadsheet-style grid where cells run Python or SQL through Jupyter kernels, with a chat that analyses your data using the LLM provider you choose. The stack in the README is a Next.js web app, a FastAPI backend with REST and WebSockets, Jupyter kernel gateway, PostgreSQL, Redis, MinIO and MLflow, all started with Docker Compose behind Nginx.",
+    decisions: [
+      { title: "Your keys, your database", body: "Bring your own key. LLM keys are encrypted at rest in your own database, never on an outside server. OpenAI, Anthropic, Google AI, Azure OpenAI and local Ollama are supported." },
+      { title: "Data stays on your infrastructure", body: "Self-hosted by design, with connectors for PostgreSQL, MySQL, BigQuery, Snowflake, CSV, Parquet and REST APIs." },
+      { title: "Analysis you can take with you", body: "Workbooks keep a version history and export as Jupyter notebooks or shareable reports. MLflow tracks model runs." },
+    ],
+    repo: "https://github.com/Vizdumb2005/FORGE-Data",
+    source: "README at github.com/Vizdumb2005/FORGE-Data, fetched 2026-10-08",
+    note: "Honest status: incomplete and not actively developed right now. The figure is a sketch of the idea, not a working demo.",
+  },
+  {
+    slug: "loki",
+    meta: "Research prototype / Work in progress",
+    headline: "A mind-reading illusion that asks the best next question",
+    tags: ["Bayesian inference", "Information gain", "FastAPI + React"],
+    problem:
+      "A good mentalist never knows the answer. They know what to ask next. LOKI explores that as an engineering problem: keep an explicit set of hypotheses, update beliefs after every answer and pick the question that removes the most uncertainty.",
+    built:
+      "Effects are declarative state machines with a hypothesis space, questions and reliability. A Bayesian engine tracks the posterior and entropy in bits, and a policy picks the question with the highest expected information gain. A FastAPI service and a React and TypeScript web app sit on top, with a panel that shows the live posterior and the entropy dropping.",
+    decisions: [
+      { title: "Transparency as a feature", body: "The web app has a peek-behind-the-curtain panel with the live posterior and an entropy sparkline, so the method is visible, not hidden." },
+      { title: "Consent first", body: "Sessions live in memory. A session is saved to the local ledger only if the participant opts in, and every record can be deleted." },
+      { title: "Measure before you trust it", body: "A simulator and evaluation CLI score each effect. README baselines are simulated sessions only. Human trials are built and still pending, so there are no human results yet." },
+    ],
+    repo: "https://github.com/Vizdumb2005/LOKI",
+    source: "README at github.com/Vizdumb2005/LOKI, fetched 2026-10-08",
+    note: "Work in progress. The research direction is moving toward gaze detection with a focus on cards.",
   },
 ];

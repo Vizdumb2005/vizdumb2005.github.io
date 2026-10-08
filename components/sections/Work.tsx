@@ -24,7 +24,7 @@ export default function Work() {
               <h3 className="display mt-3 text-4xl md:text-5xl">{p.name}</h3>
               <p className="mt-4">{p.summary}</p>
               <p className="mono mt-4 text-xs text-cool">{p.stack.join(" / ")}</p>
-              <p className="mt-4 flex gap-5">{(p.slug === "stratum-rag" || p.slug === "kratos-engine") && <a href={`/work/${p.slug}`}>Case study</a>}{p.href && <a href={p.href}>Repo</a>}</p>
+              <p className="mt-4 flex gap-5">{<a href={`/work/${p.slug}`}>Case study</a>}{p.href && <a href={p.href}>Repo</a>}</p>
             </div>
             <div className={"min-w-0 " + (i === 0 ? "md:col-span-7" : "md:col-span-8")}>
               {figures[p.slug]}
