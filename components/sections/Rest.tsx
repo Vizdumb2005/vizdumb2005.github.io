@@ -1,5 +1,4 @@
 import { certs, education, founder, person } from "@/lib/content";
-import { Slot } from "@/components/ui/Slot";
 
 export function Founder() {
   return (
@@ -9,7 +8,13 @@ export function Founder() {
         <p className="mono mt-3 text-xs text-cool">{founder.role}, since {founder.since}</p>
         <p className="measure mt-6">{founder.line}</p>
       </div>
-      <div className="md:col-span-5"><Slot label="portrait photo" ratio="4 / 5" /></div>
+      <div className="md:col-span-5">
+        <picture>
+          <source type="image/webp" srcSet="/portrait-480.webp 480w, /portrait-960.webp 960w" sizes="(min-width: 768px) 440px, 100vw" />
+          <img src="/portrait-960.jpg" srcSet="/portrait-480.jpg 480w, /portrait-960.jpg 960w" sizes="(min-width: 768px) 440px, 100vw" width={960} height={1200} loading="lazy" decoding="async"
+            alt="Portrait of Viren Singh, smiling, in a navy blazer and white shirt" className="aspect-[4/5] w-full max-w-md border border-line object-cover" />
+        </picture>
+      </div>
     </section>
   );
 }
