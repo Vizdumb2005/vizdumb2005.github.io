@@ -32,13 +32,42 @@ export function Credentials() {
 }
 
 export function Contact() {
+  const nav = [["Work", "#work"], ["Skills", "#skills"], ["Founder", "#founder"], ["Credentials", "#credentials"]];
+  const connect = [["GitHub", person.links.github], ["GitLab", person.links.gitlab], ["LinkedIn", person.links.linkedin], ["Hugging Face", "https://huggingface.co/Vir007"]];
   return (
-    <section id="contact" className="mx-auto max-w-6xl px-6 py-28">
-      <h2 className="display text-5xl md:text-7xl">Say hello</h2>
-      <p className="mt-6"><a className="mono" href={`mailto:${person.email}`}>{person.email}</a></p>
-      <p className="mono mt-6 text-xs text-cool">
-        <a href={person.links.github}>GitHub</a> / <a href={person.links.gitlab}>GitLab</a> / <a href={person.links.linkedin}>LinkedIn</a>
-      </p>
-    </section>
+    <footer id="contact" className="relative mt-10 overflow-hidden">
+      <div className="site-foot-panel relative mx-auto max-w-[1600px] px-6 pb-24 pt-20 md:px-16 md:pb-32 md:pt-24">
+        <div className="relative mx-auto grid max-w-5xl gap-12 md:grid-cols-12">
+          <div className="md:col-span-5">
+            <h2 className="display text-4xl md:text-5xl">Say hello</h2>
+            <p className="mt-3 max-w-xs text-sm text-cool">Projects, data and AI systems, or just a good question. I read every email.</p>
+            <a href={`mailto:${person.email}`} className="foot-cta mono mt-6 inline-flex min-h-11 max-w-full items-center rounded-full px-5 text-[13px] no-underline">
+              <span className="truncate">{person.email}</span>
+            </a>
+          </div>
+          <nav aria-label="Footer" className="grid grid-cols-2 gap-10 text-sm md:col-span-7 md:grid-cols-3">
+            <div>
+              <p className="mono mb-4 text-xs text-ember">Explore</p>
+              <ul className="space-y-2.5">{nav.map(([l, h]) => <li key={h}><a className="foot-link" href={h}>{l}</a></li>)}</ul>
+            </div>
+            <div>
+              <p className="mono mb-4 text-xs text-ember">Contact</p>
+              <ul className="space-y-2.5">
+                <li><a className="foot-link" href={`mailto:${person.email}`}>Email</a></li>
+                <li className="text-cool">{person.location}</li>
+              </ul>
+            </div>
+            <div>
+              <p className="mono mb-4 text-xs text-ember">Connect</p>
+              <ul className="space-y-2.5">{connect.map(([l, h]) => <li key={l}><a className="foot-link" href={h} rel="noopener">{l}</a></li>)}</ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <div aria-hidden="true" className="foot-word display select-none text-center">{person.name}</div>
+      <div className="mx-auto max-w-5xl px-6 pb-10">
+        <div className="border-t border-dashed border-white/20 pt-6 text-center text-xs text-cool">&copy; {new Date().getFullYear()} {person.name}. {person.headline}.</div>
+      </div>
+    </footer>
   );
 }
